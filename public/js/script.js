@@ -24,7 +24,7 @@ function calculateLove() {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
     // Send data to the server
-    fetch('https://justforfun.onrender.com/submit_names', {
+    fetch('https://justforfun-rhln.onrender.com/submit_names', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ function calculateLove() {
     .then(response => response.json())
     .then(data => {
         console.log(data.message); // Logs the success message from the server
-        const url = `https://justforfun.onrender.com/result.html?name1=${encodeURIComponent(name1)}&name2=${encodeURIComponent(name2)}&loveScore=${loveScore}&quote=${encodeURIComponent(randomQuote)}`;
+        const url = `https://justforfun-rhln.onrender.com/result.html?name1=${encodeURIComponent(name1)}&name2=${encodeURIComponent(name2)}&loveScore=${loveScore}&quote=${encodeURIComponent(randomQuote)}`;
         window.location.href = url;
     })
     .catch(error => console.error('Error:', error));
